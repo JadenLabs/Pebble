@@ -1,0 +1,32 @@
+# ━ Bot Values ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+bot_status: online
+bot_activity: Planning world domination
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# ━ IDs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+sudo_users:
+    - 1027380375028244551 # roc.py
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# ━ Colors ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+colors:
+    primary: 0xffffff
+    secondary: 0xbcbcbc
+    invisible: 0x2B2D31
+    success: 0x00D355
+    error: 0xDF0043
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# ━ Emojis ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+emojis:
+    dns_w: <:dns_w:1230704192214274070>
+    chat_w: <:chat_w:1230703720782757928>
+    star_w: <:star_w:1230702806931869756>
+    arrow_rw: <:arrow_rw:1230358274096889867>
+    network_w: <:network_w:1230358684073328744>
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# ━ Messages ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+messages:
+    disclaimer: "By using this bot you agree to the usage of message intent data from Discord in order to run this leveling experience."
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -1,0 +1,6 @@
+rich
+pyyaml
+discord
+cogwatch
+pymongo[srv]
+python-dotenv

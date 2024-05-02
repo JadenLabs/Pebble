@@ -1,0 +1,10 @@
+services:
+    roc-bot:
+        build:
+            context: .
+        volumes:
+            - roc_bot_logs:/app/logs
+
+volumes:
+    roc_bot_logs:
+        driver: local

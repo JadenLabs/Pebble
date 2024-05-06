@@ -26,6 +26,7 @@ class Levels(Cog):
             description=f"""\
 Hello {ctx.user.mention}, welcome to your pebble profile!
 
+{config.emojis['up_trend_w']} Global Level: `{user_doc['level']}`
 {config.emojis['star_w']} Total XP: `{user_doc['total_xp']}`
 {config.emojis['chat_w']} Messages: `{user_doc['total_messages']}`
 {config.emojis['dns_w']} Servers: `{len(user_doc['servers'].keys())}`

@@ -31,3 +31,11 @@ emojis:
 messages:
     disclaimer: "By using this bot you agree to the usage of message intent data from Discord in order to run this leveling experience."
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# ━ Leveling ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+global_settings:
+    xp_gain: 200
+    multiplier: 200
+    cooldown: 60
+    cooldown_strictness: 1.25
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

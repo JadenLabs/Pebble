@@ -4,7 +4,7 @@ from src.bot.bot import Bot
 from src.base.config import config
 from src.utils.logger import logger
 from src.utils.embeds import no_user_perms_embed
-
+from src.utils import server
 
 class Client(Cog):
     """Client Events"""
@@ -31,6 +31,7 @@ class Client(Cog):
     @Cog.listener()
     async def on_guild_join(self, guild: Guild):
         logger.info(f"Client has joined {guild.id}")
+        server_doc = server.find_or_create(guild)
 
     @Cog.listener()
     async def on_guild_remove(self, guild: Guild):

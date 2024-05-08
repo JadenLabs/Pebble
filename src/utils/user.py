@@ -16,7 +16,7 @@ def find_or_create(ctx: Interaction | Message) -> list[dict, bool]:
 
     user_db = database.db.users
     user_doc = user_db.find_one({"user_id": user.id})
-    logger.debug(f"Running doc check for {user.id}")
+    logger.debug(f"Running doc check for @{user.id}")
     user_is_new = False
 
     if not user_doc:
@@ -34,7 +34,7 @@ def find_or_create(ctx: Interaction | Message) -> list[dict, bool]:
         # logger.debug(f"user_data: {user_data}")
         user_db.insert_one(user_data)
         user_doc = user_db.find_one({"user_id": user.id})
-        logger.debug(f"Doc check for {user.id} failed, made new one")
+        logger.debug(f"Doc check for @{user.id} failed, made new one")
 
     return user_doc, user_is_new
 
@@ -48,9 +48,10 @@ async def handle_msg_xp_event(message: Message):
         user_doc = user_db.find_one({"user_id": message.author.id})
 
         # * Update global values
-        updated_doc = {"servers": {}}
+        updated_doc = {}
+        updated_doc["servers"] = user_doc["servers"]
         updated_doc["total_messages"] = user_doc["total_messages"] + 1
-        gained_xp = 100
+        gained_xp = 200
         updated_doc["total_xp"] = user_doc["total_xp"] + gained_xp
 
         # Get old and new levels
@@ -65,6 +66,18 @@ async def handle_msg_xp_event(message: Message):
             )
 
         # * Update server values
+        # Get server doc
+        server_doc = database.db.servers.find_one({"server_id": message.guild.id})
+
+        # Add member to member list if not in list
+        server_members = server_doc.get("members", [])
+        if message.author.id not in server_members:
+            server_members.append(message.author.id)
+            database.db.servers.update_one(
+                {"server_id": message.guild.id},
+                {"$set": {"members": server_members}},
+            )
+
         server_data = user_doc["servers"].get(
             f"{message.guild.id}", {"messages": 0, "level": 0, "xp": 0}
         )
@@ -96,8 +109,10 @@ async def handle_msg_xp_event(message: Message):
         database.db.users.update_one(
             {"user_id": message.author.id}, {"$set": updated_doc}
         )
+
     except Exception as e:
         # [05/05/24] It's late and I'm going insane fixing errors
+        # [05/07/24] Im so glad this block exists
         logger.error(f"An error occured handling msg XP event: {e}")
         traceback.print_exc()
         raise e

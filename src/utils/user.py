@@ -29,6 +29,7 @@ def find_or_create(ctx: Interaction | Message) -> list[dict, bool]:
             "total_xp": 0,
             "level": 0,
             "ping": False,
+            "last_message": None,
             "servers": {},
         }
         # logger.debug(f"user_data: {user_data}")
@@ -79,7 +80,8 @@ async def handle_msg_xp_event(message: Message):
             )
 
         server_data = user_doc["servers"].get(
-            f"{message.guild.id}", {"messages": 0, "level": 0, "xp": 0}
+            f"{message.guild.id}",
+            {"messages": 0, "level": 0, "xp": 0, "last_message": None},
         )
         # logger.debug(server_data)
 

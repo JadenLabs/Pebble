@@ -26,7 +26,7 @@ class Message(Cog):
 
         await user.handle_msg_xp_event(message)
 
-        logger.debug(f"Finished block from {message.author.id}")
+        logger.debug(f"Finished block from @{message.author.id}")
 
 
 async def setup(bot: Bot):

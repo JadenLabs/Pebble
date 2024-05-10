@@ -1,6 +1,8 @@
 # 🚨 DISCLAIMER
 This bot is still in **development** and will not be fully functional, use at your own discretion. 
 
+---
+
 # 🪨 Pebble
 *The last Discord bot project of JadenLabs - let's make this good.*
 

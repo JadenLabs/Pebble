@@ -4,5 +4,5 @@
 ---
 
 ## Purpose
-Riveling mainstream leveling bots, Pebble is made with the purpose to put more control in the hands of users with advanced configurations and settings.
+Aiming to rival mainstream leveling bots, Pebble is made with the purpose to put more control in the hands of users with advanced configurations and settings.
 

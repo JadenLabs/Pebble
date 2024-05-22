@@ -10,13 +10,13 @@ class Admin(Cog):
     def __init__(self, bot: Bot):
         self.bot = bot
 
-    @app_commands.command(name="settings", description="Manage your pebble settings")
+    @app_commands.command(name="settings", description=f"Manage your {config.bot_name} settings")
     async def settings(self, ctx: Interaction):
-        """Pebble settings"""
+        """Bot settings"""
         embed = Embed(
             color=config.colors["primary"],
             description=f"""\
-Welcome to the pebble settings, {ctx.user.mention}.
+Welcome to the {config.bot_name} settings, {ctx.user.mention}.
 Currently managing `{ctx.guild.name}`.
 
 {config.emojis["arrow_rw"]} Grace: `na`

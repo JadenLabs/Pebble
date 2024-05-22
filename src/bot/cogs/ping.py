@@ -10,7 +10,7 @@ class Ping(Cog):
     def __init__(self, bot: Bot):
         self.bot = bot
 
-    @app_commands.command(name="ping", description="Pings the pebble")
+    @app_commands.command(name="ping", description=f"Pings {config.bot_name}")
     async def ping(self, ctx: Interaction):
         """Pings the bot."""
         ping = round(self.bot.latency * 1000)

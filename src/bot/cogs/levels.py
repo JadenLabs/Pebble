@@ -13,25 +13,25 @@ class Levels(Cog):
         self.bot = bot
 
     @app_commands.command(
-        name="me", description="Check your personal profile for pebble"
+        name="me", description=f"Check your personal profile for {config.bot_name}"
     )
     async def me(self, ctx: Interaction):
         """Command for a user to view their profile"""
         await ctx.response.defer(ephemeral=True)
 
-        user_doc, user_is_new = user.find_or_create(ctx)
+        user_doc, _ = user.find_or_create(ctx)
 
         embed = Embed(
             color=config.colors["primary"],
             description=f"""\
-Hello {ctx.user.mention}, welcome to your pebble profile!
+Hello {ctx.user.mention}, welcome to your {config.bot_name} profile!
 
 {config.emojis['up_trend_w']} Global Level: `{user_doc['level']}`
 {config.emojis['star_w']} Global XP: `{user_doc['total_xp']}`
 {config.emojis['chat_w']} Messages: `{user_doc['total_messages']}`
 {config.emojis['dns_w']} Servers: `{len(user_doc['servers'].keys())}`
 """,
-        ).set_footer(text="This profile shows your global data for pebble.")
+        ).set_footer(text=f"This profile shows your global data for {config.bot_name}.")
 
         await ctx.edit_original_response(embed=embed)
 

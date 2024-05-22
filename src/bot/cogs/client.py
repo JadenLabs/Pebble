@@ -1,9 +1,7 @@
-from discord import Interaction, AppCommandType, Guild
-from discord.ext.commands import Cog, CheckFailure
+from discord import Guild
+from discord.ext.commands import Cog
 from src.bot.bot import Bot
-from src.base.config import config
 from src.utils.logger import logger
-from src.utils.embeds import no_user_perms_embed
 from src.utils import server
 
 class Client(Cog):

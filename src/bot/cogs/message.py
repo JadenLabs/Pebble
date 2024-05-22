@@ -22,7 +22,7 @@ class Message(Cog):
 
         logger.debug(f"Message create: ${message.guild.id} @{message.author.id}")
 
-        user_doc, user_is_new = user.find_or_create(message)
+        _ = user.find_or_create(message)
 
         await user.handle_msg_xp_event(message)
 
